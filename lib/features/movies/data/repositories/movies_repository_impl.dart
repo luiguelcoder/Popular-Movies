@@ -1,12 +1,14 @@
 import 'package:dartz/dartz.dart';
-import 'package:popular_movies/core/error/exception.dart';
-import 'package:popular_movies/core/network/network_info.dart';
+import 'package:injectable/injectable.dart';
+import '../../../../core/error/exception.dart';
+import '../../../../core/network/network_info.dart';
 import '../datasources/movies_remote_data_source.dart';
 import '../../../../core/error/failure.dart';
 import '../../domain/entities/movie_page_response.dart';
 import '../../domain/repositories/movies_repository.dart';
 import 'package:meta/meta.dart';
 
+@LazySingleton(as: MoviesRepository)
 class MoviesRepositoryImpl implements MoviesRepository {
   final MoviesRemoteDataSource remoteDataSource;
   final NetworkInfo networkInfo;

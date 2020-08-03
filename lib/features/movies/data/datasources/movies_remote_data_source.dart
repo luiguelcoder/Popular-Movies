@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
+import 'package:injectable/injectable.dart';
 import 'package:popular_movies/core/error/exception.dart';
 
 import '../models/movie_page_response_model.dart';
@@ -10,6 +11,7 @@ abstract class MoviesRemoteDataSource {
   Future<MoviePageResponseModel> getPopularMovies();
 }
 
+@LazySingleton(as: MoviesRemoteDataSource)
 class MoviesRemoteDataSourceImpl implements MoviesRemoteDataSource {
   static const String _key = "334e246dda43cdc25df8a6c442e4fb21";
   static const String _url = "https://api.themoviedb.org";
