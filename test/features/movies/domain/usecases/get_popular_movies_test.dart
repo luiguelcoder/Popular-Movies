@@ -18,32 +18,11 @@ void main() {
     usecase = GetPopularMovies(mockMoviesRepository);
   });
 
-  final tMoviePageResponse = MoviePageResponseModel.fromJson(
-    {
-      "page": 1,
-      "total_results": 10000,
-      "total_pages": 500,
-      "results": [
-        {
-          "popularity": 241.4,
-          "vote_count": 2572,
-          "video": false,
-          "poster_path": "/mb7wQv0adK3kjOUr9n93mANHhPJ.jpg",
-          "id": 583083,
-          "adult": false,
-          "backdrop_path": "/wO5QSWZPBT71gMLvrRex0bVc0V9.jpg",
-          "original_language": "en",
-          "original_title": "The Kissing Booth 2",
-          "genre_ids": [35, 10749],
-          "title": "The Kissing Booth 2",
-          "vote_average": 8.2,
-          "overview": "With college decisions looming, Elle juggles her "
-              "long-distance romance with Noah, changing relationship with "
-              "bestie Lee and feelings for a new classmate.",
-          "release_date": "2020-07-24"
-        }
-      ]
-    },
+  final tMoviePageResponse = MoviePageResponseModel(
+    page: 1,
+    totalResults: 1000,
+    totalPages: 500,
+    results: [],
   );
 
   test(

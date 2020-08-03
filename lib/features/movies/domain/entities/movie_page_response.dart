@@ -1,15 +1,20 @@
+import 'package:equatable/equatable.dart';
+import 'package:meta/meta.dart';
 import 'movie.dart';
 
-class MoviePageResponse {
-  int page;
-  int totalResults;
-  int totalPages;
-  List<Movie> results;
+class MoviePageResponse extends Equatable {
+  final int page;
+  final int totalResults;
+  final int totalPages;
+  final List<Movie> results;
 
   MoviePageResponse({
-    this.page,
-    this.totalResults,
-    this.totalPages,
-    this.results,
+    @required this.page,
+    @required this.totalResults,
+    @required this.totalPages,
+    @required this.results,
   });
+
+  @override
+  List<Object> get props => [page, totalResults, totalPages, results];
 }
