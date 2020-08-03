@@ -45,7 +45,7 @@ void main() {
       () async {
         // arrange
         final Map<String, dynamic> jsonMap =
-            json.decode(fixture('movie_page_response.json'));
+            json.decode(await fixture('movie_page_response.json'));
         // act
         final result = MoviePageResponseModel.fromJson(jsonMap);
         // assert

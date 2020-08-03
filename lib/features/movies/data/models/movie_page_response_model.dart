@@ -7,7 +7,7 @@ class MoviePageResponseModel extends MoviePageResponse {
     @required int page,
     @required int totalResults,
     @required int totalPages,
-    @required List<dynamic> results,
+    @required List<MovieModel> results,
   }) : super(
           page: page,
           totalResults: totalResults,
