@@ -30,6 +30,18 @@ dependencies:
   # Functional Programming in Dart. Purify your Dart code using efficient immutable data structures, monads, lenses and other FP tools.
   dartz: ^0.9.1
 
+  # A pure Dart library that checks for internet by opening a socket to a list of specified addresses, each with individual port and timeout.
+  data_connection_checker: ^0.3.4
+
+  # An abstract class that helps to implement equality without needing to explicitly override == and hashCode.
+  equatable: ^1.2.3
+
+  # Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in the App
+  get_it: ^4.0.4
+
+  # A composable, multi-platform, Future-based API for HTTP requests.
+  http: ^0.12.2
+
   # Injectable is a convenient code generator for get_it. Inspired by Angular DI, Guice DI and inject.dart.
   injectable: ^1.0.2
 

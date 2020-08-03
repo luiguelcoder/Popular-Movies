@@ -1,9 +1,11 @@
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 import '../../../../core/error/failure.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../entities/movie_page_response.dart';
 import '../repositories/movies_repository.dart';
 
+@lazySingleton
 class GetPopularMovies extends UseCase<MoviePageResponse, NoParams>{
   final MoviesRepository repository;
 
