@@ -36,6 +36,12 @@ dependencies:
   # An abstract class that helps to implement equality without needing to explicitly override == and hashCode.
   equatable: ^1.2.3
 
+  # Flutter Widgets that make it easy to implement the BLoC (Business Logic Component) design pattern. Built to be used with the bloc state management package.
+  flutter_bloc: ^6.0.1
+
+  # Swiper(carousel) for flutter, with multiple layouts, infinite loop. Compatible with Android & iOS
+  flutter_swiper: ^1.1.6
+
   # Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in the App
   get_it: ^4.0.4
 
@@ -44,6 +50,10 @@ dependencies:
 
   # Injectable is a convenient code generator for get_it. Inspired by Angular DI, Guice DI and inject.dart.
   injectable: ^1.0.2
+
+  # Contains code to deal with internationalized/localized messages, date and number formatting and parsing, bi-directional text, and other internationalization issues.
+  intl: ^0.16.1
+
 
 dev_dependencies:
   # A build system for Dart code generation and modular compilation.
@@ -70,8 +80,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+      - assets/camera.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
