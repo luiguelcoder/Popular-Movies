@@ -64,6 +64,9 @@ dependencies:
   intl_translation: ^0.17.9
 
 dev_dependencies:
+
+  flutter_launcher_icons: ^0.7.5
+
   # A build system for Dart code generation and modular compilation.
   build_runner:
 
@@ -76,6 +79,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/icon.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
