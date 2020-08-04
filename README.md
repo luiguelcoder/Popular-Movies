@@ -16,6 +16,13 @@ To install it, follow the set-up steps in the [documentation][flutter.dev/instal
 
 [flutter.dev/install]: https://flutter.dev/docs/get-started/install
 
+## Architecture
+
+The architecture in the application will be based on the implementation of Clean Architecture.
+
+* [Clean Architecture][ca] is a software design philosophy that separates the elements of a design into ring levels. The main rule of clean architecture is that code dependencies can only come from the outer levels inward. Code on the inner layers can have no knowledge of functions on the outer layers.
+
+
 ## Using GetIt
 
 Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in the App.
