@@ -4,19 +4,21 @@ import '../../../../domain/entities/movie.dart';
 
 class MovieInformation extends StatelessWidget {
   final Movie movie;
+  final Function callback;
 
-  MovieInformation({@required this.movie});
+  MovieInformation({@required this.movie, @required this.callback});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
       child: Column(
         children: <Widget>[
           Text(
             movie.title,
             style: Theme.of(context).textTheme.headline5,
-            maxLines: 2,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 4),
@@ -46,10 +48,10 @@ class MovieInformation extends StatelessWidget {
             height: 45,
             width: 150,
             child: OutlineButton(
-              onPressed: () {},
+              onPressed: callback,
               child: Text("See Details"),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(24),
               ),
             ),
           ),

@@ -42,6 +42,14 @@ class Movie extends Equatable {
     }
   }
 
+  String getBackdropPath() {
+    if (backdropPath == null) {
+      return "https://insidelatinamerica.net/wp-content/uploads/2018/01/noImg_2.jpg";
+    } else {
+      return "https://image.tmdb.org/t/p/w500/$backdropPath";
+    }
+  }
+
   @override
   List<Object> get props => [
         popularity,

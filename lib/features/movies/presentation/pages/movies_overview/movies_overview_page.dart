@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import '../../../domain/entities/movie.dart';
+import '../movie_detail/movie_detail_page.dart';
+import '../../widgets/movie_poster.dart';
 import 'widgets/movie_information.dart';
 import '../../bloc/movies_state.dart';
 import '../../bloc/movies_event.dart';
@@ -41,19 +44,15 @@ class MoviesOverviewPage extends StatelessWidget {
                         child: Swiper(
                           outer: true,
                           itemBuilder: (BuildContext context, int index) {
-                            return ClipRRect(
-                              borderRadius: BorderRadius.circular(16),
-                              child: GestureDetector(
-                                onTap: () {},
-                                child: FadeInImage(
-                                  placeholder: AssetImage('assets/camera.png'),
-                                  image: NetworkImage(
-                                    state.moviePageResponse.results[index]
-                                        .getPosterPath(),
-                                  ),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
+                            return MoviePoster(
+                              posterPath: state.moviePageResponse.results[index]
+                                  .getPosterPath(),
+                              callback: () {
+                                _navigateToMovieDetail(
+                                  context: context,
+                                  movie: state.moviePageResponse.results[index],
+                                );
+                              },
                             );
                           },
                           itemCount: state.moviePageResponse.results.length,
@@ -67,10 +66,17 @@ class MoviesOverviewPage extends StatelessWidget {
                       Expanded(
                         flex: 4,
                         child: ValueListenableBuilder<int>(
-                            valueListenable:_currentMovie,
+                            valueListenable: _currentMovie,
                             builder: (context, index, child) {
                               return MovieInformation(
                                 movie: state.moviePageResponse.results[index],
+                                callback: () {
+                                  _navigateToMovieDetail(
+                                    context: context,
+                                    movie:
+                                        state.moviePageResponse.results[index],
+                                  );
+                                },
                               );
                             }),
                       ),
@@ -88,5 +94,15 @@ class MoviesOverviewPage extends StatelessWidget {
 
   void _changeIndex(int index) {
     _currentMovie.value = index;
+  }
+
+  void _navigateToMovieDetail({BuildContext context, Movie movie}) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => MovieDetailPage(
+          movie: movie,
+        ),
+      ),
+    );
   }
 }
