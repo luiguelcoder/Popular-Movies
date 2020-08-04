@@ -24,7 +24,7 @@ class MovieDetailPage extends StatelessWidget {
                 style: TextStyle(color: Colors.white, fontSize: 16),
               ),
               background: FadeInImage(
-                placeholder: AssetImage("assets/camera.png"),
+                placeholder: AssetImage("assets/camera.jpg"),
                 image: NetworkImage(movie.getBackdropPath()),
                 fit: BoxFit.cover,
               ),
@@ -41,6 +41,7 @@ class MovieDetailPage extends StatelessWidget {
                         height: 200,
                         width: 120,
                         child: MoviePoster.detail(
+                          idMovie: movie.id.toString(),
                           posterPath: movie.getPosterPath(),
                         ),
                       ),
