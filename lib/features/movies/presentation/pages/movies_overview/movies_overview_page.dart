@@ -1,3 +1,4 @@
+import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
@@ -28,7 +29,13 @@ class MoviesOverviewPage extends StatelessWidget {
             LoadPopularMovies(),
           ),
         child: BlocConsumer<MoviesBloc, MoviesState>(
-          listener: (context, state) {},
+          listener: (context, state) {
+            if (state is Error) {
+              FlushbarHelper.createError(
+                message: state.message,
+              ).show(context);
+            }
+          },
           builder: (context, state) {
             if (state is Loading) {
               return Center(

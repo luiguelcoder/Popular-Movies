@@ -10,6 +10,7 @@ import 'movies_event.dart';
 import 'movies_state.dart';
 
 const String SERVER_FAILURE_MESSAGE = 'Server Failure';
+const String CONNECTION_FAILURE_MESSAGE = 'Please check your connection and try again.';
 
 @injectable
 class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
@@ -41,6 +42,8 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
         return SERVER_FAILURE_MESSAGE;
       case RequestFailure:
         return (failure as RequestFailure).message;
+      case ConnectionFailure:
+        return CONNECTION_FAILURE_MESSAGE;
       default:
         return 'Unexpected Error';
     }
