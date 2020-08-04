@@ -1,16 +1,37 @@
-# popular_movies
+# Popular Movies
 
-A new Flutter application.
+Demo Small Application to show popular movies using the [ThemovieDB API][​themoviedb.org]
 
-## Getting Started
+[​themoviedb.org]:​https://www.themoviedb.org
 
-This project is a starting point for a Flutter application.
+## Documentation
 
-A few resources to get you started if this is your first Flutter project:
+### Flutter
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+[Flutter][flutter.dev] is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To install it, follow the set-up steps in the [documentation][flutter.dev/install] guide according to your operating system.
+
+[flutter.dev]: https://flutter.dev/
+
+[flutter.dev/install]: https://flutter.dev/docs/get-started/install
+
+## Using GetIt
+
+Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in the App.
+
+## Using Injectable
+
+Injectable is a convenient code generator for get_it. Inspired by Angular DI, Guice DI and inject.dart.
+
+# Using Intl Translation 
+
+Contains code to deal with internationalized/localized messages, date and number formatting and parsing, bi-directional text, and other internationalization issues.
+
+To create the default intl files run the next command:
+
+`flutter pub pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/localizations.dart`
+
+To create the default update the intl files run the next command:
+
+`flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/l10n \ --no-use-deferred-loading lib/localizations.dart lib/l10n/intl_*.arb`
