@@ -1,0 +1,26 @@
+{
+  "@@last_modified": "2020-08-04T02:40:34.407471",
+  "title": "Popular Movies",
+  "@title": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "popularityLabel": "Popularity",
+  "@popularityLabel": {
+    "description": "Movies Overview",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userScoreLabel": "User Score",
+  "@userScoreLabel": {
+    "description": "Movies Overview",
+    "type": "text",
+    "placeholders": {}
+  },
+  "seeDetailsButton": "See Details",
+  "@seeDetailsButton": {
+    "description": "Movies Overview",
+    "type": "text",
+    "placeholders": {}
+  }
+}
