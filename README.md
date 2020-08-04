@@ -24,3 +24,14 @@ Simple direct Service Locator that allows to decouple the interface from a concr
 
 Injectable is a convenient code generator for get_it. Inspired by Angular DI, Guice DI and inject.dart.
 
+# Using Intl Translation 
+
+Contains code to deal with internationalized/localized messages, date and number formatting and parsing, bi-directional text, and other internationalization issues.
+
+To create the default intl files run the next command:
+
+`flutter pub pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/localizations.dart`
+
+To create the default update the intl files run the next command:
+
+`flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/l10n \ --no-use-deferred-loading lib/localizations.dart lib/l10n/intl_*.arb`

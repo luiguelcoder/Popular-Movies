@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import '../../../../../../localizations.dart';
 import '../../../../domain/entities/movie.dart';
 
 class MovieInformation extends StatelessWidget {
@@ -33,12 +34,13 @@ class MovieInformation extends StatelessWidget {
               voteDetail(
                 context: context,
                 vote: movie.popularity.toString(),
-                description: "Popularity",
+                description: AppLocalizations.of(context).popularityLabel,
               ),
               voteDetail(
-                  context: context,
-                  vote: "${movie.voteAverage.toString()} %",
-                  description: "User Score")
+                context: context,
+                vote: "${movie.voteAverage.toString()} %",
+                description: AppLocalizations.of(context).userScoreLabel,
+              )
             ],
           ),
           SizedBox(
@@ -49,10 +51,10 @@ class MovieInformation extends StatelessWidget {
             width: 150,
             child: OutlineButton(
               onPressed: callback,
-              child: Text("See Details"),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(24),
               ),
+              child: Text(AppLocalizations.of(context).seeDetailsButton),
             ),
           ),
         ],

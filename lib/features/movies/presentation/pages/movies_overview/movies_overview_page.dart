@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import '../../../../../localizations.dart';
 import '../../../domain/entities/movie.dart';
 import '../movie_detail/movie_detail_page.dart';
 import '../../widgets/movie_poster.dart';
@@ -18,7 +19,7 @@ class MoviesOverviewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Popular Movies"),
+        title: Text(AppLocalizations.of(context).title),
         centerTitle: true,
       ),
       body: BlocProvider(
