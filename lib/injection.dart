@@ -1,3 +1,4 @@
+import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'injection.config.dart';
@@ -11,4 +12,7 @@ void configureInjection(String env) {
 
   // External - Http Client
   getIt.registerLazySingleton(() => http.Client());
+
+  // External - NetworkInfo
+  getIt.registerLazySingleton(() => DataConnectionChecker());
 }

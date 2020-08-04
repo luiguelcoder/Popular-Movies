@@ -34,6 +34,14 @@ class Movie extends Equatable {
     @required this.releaseDate,
   });
 
+  String getPosterPath() {
+    if (posterPath == null) {
+      return "https://insidelatinamerica.net/wp-content/uploads/2018/01/noImg_2.jpg";
+    } else {
+      return "https://image.tmdb.org/t/p/w500/$posterPath";
+    }
+  }
+
   @override
   List<Object> get props => [
         popularity,

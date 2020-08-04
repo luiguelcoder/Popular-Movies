@@ -1,13 +1,17 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
+import 'package:injectable/injectable.dart';
 import '../../../../core/error/failure.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../../domain/usecases/get_popular_movies.dart';
-import './bloc.dart';
 import 'package:meta/meta.dart';
+
+import 'movies_event.dart';
+import 'movies_state.dart';
 
 const String SERVER_FAILURE_MESSAGE = 'Server Failure';
 
+@injectable
 class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
   // Import the use cases to use
   final GetPopularMovies getPopularMovies;
@@ -20,7 +24,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
   Stream<MoviesState> mapEventToState(
     MoviesEvent event,
   ) async* {
-    if (event is GetPopularMovies) {
+    if (event is LoadPopularMovies) {
       yield Loading();
       final failureOrSuccess = await getPopularMovies(NoParams());
       yield failureOrSuccess.fold(
